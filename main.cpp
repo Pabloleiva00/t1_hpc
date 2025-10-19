@@ -82,7 +82,7 @@ long long contar_primos(int limit, const std::string& mode, int threads, int chu
 int main() {
     int limit = 400000000;  // Buscar primos hasta 400 millones
     std::vector<std::string> modes = {"secuencial", "static", "dynamic", "guided"};
-    std::vector<int> threads_list = {2, 4, 8};
+    std::vector<int> threads_list = {2, 4, 16};
     std::vector<int> chunks = {0, 10, 1000, 10000};
 
     std::ofstream file("resultados.csv");
