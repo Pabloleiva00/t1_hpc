@@ -35,7 +35,7 @@ def count_primes_parallel(limit):
 
 if __name__ == "__main__":
     limit = 400000000
-    threads_list = [1, 2, 4, 6, 8, 10, 12]
+    threads_list = [1, 2, 4, 6, 8, 10, 12, 16]
     
     # Crear archivo CSV para resultados
     with open('resultados_numba.csv', 'w') as f:
