@@ -34,29 +34,34 @@ def count_primes_parallel(limit):
 
 
 if __name__ == "__main__":
-    set_num_threads(4)  # numero de hilos
-    print(f"Usando {get_num_threads()} threads")
-    print()
+    limit = 400000000
+    threads_list = [1, 2, 4, 6, 8, 10, 12]
     
-    limit = 400000000  
+    # Crear archivo CSV para resultados
+    with open('resultados_numba.csv', 'w') as f:
+        f.write('modo,threads,chunk,tiempo,primos\n')
+        # Versión secuencial
+        print("=== Versión Secuencial con Numba ===")
+        start = time.time()
+        count = count_primes_sequential(limit)
+        end = time.time()
+        duration = end - start
+        
+        print(f"Modo: secuencial | Threads: 1 | Tiempo: {duration:.2f} s | Primos: {count}")
+        f.write(f'secuencial,1,NA,{duration},{count}\n')
+        print()
+        
+        # Versión paralela con diferentes números de threads
+        print("=== Versión Paralela con Numba ===")
+        for threads in threads_list:
+            set_num_threads(threads)
+            
+            start = time.time()
+            count = count_primes_parallel(limit)
+            end = time.time()
+            duration = end - start
+            
+            print(f"Modo: paralelo | Threads: {threads} | Tiempo: {duration:.2f} s | Primos: {count}")
+            f.write(f'paralelo,{threads},NA,{duration},{count}\n')
     
-    # Versión secuencial con Numba
-    print("=== Versión Secuencial con Numba ===")
-    start = time.time()
-    count = count_primes_sequential(limit)
-    end = time.time()
-    
-    print(f"Rango: 2 a {limit}")
-    print(f"Primos encontrados: {count}")
-    print(f"Tiempo: {end - start:.2f} segundos")
-    print()
-    
-    # Versión paralela con Numba
-    print("=== Versión Paralela con Numba ===")
-    start = time.time()
-    count = count_primes_parallel(limit)
-    end = time.time()
-    
-    print(f"Rango: 2 a {limit}")
-    print(f"Primos encontrados: {count}")
-    print(f"Tiempo: {end - start:.2f} segundos")
+    print("\nResultados guardados en 'resultados_numba.csv'")
