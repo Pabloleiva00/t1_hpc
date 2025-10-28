@@ -1,8 +1,15 @@
-a)
-b)
-c)
-d)
-(e)
+a) Los resultados de referencia estan en el archivo `resultados.csv`
+
+b) Los ajustes del codigo estan en `main.cpp`
+
+c) La implementacion en Python esta `main.py` y sus respectivos resultados estan en `resultados_numba.csv` y `resultados_numba1.csv`
+
+d) Los graficos con los resultados estan en [Colab](https://colab.research.google.com/drive/19K46_v6vEFIr4JTWJzmNxD2URZwWkuy9?usp=sharing#scrollTo=sFgdWeV7n0Xh)
+
+e) Los graficos de speedup y eficiencia estan en [Colab](https://colab.research.google.com/drive/19K46_v6vEFIr4JTWJzmNxD2URZwWkuy9?usp=sharing#scrollTo=sFgdWeV7n0Xh)
+
+Discusión e) y f) 
+
 Para esta respuesta se consideran los resultados encontrados (+21.000.000 primos) por el dataset hecho por C++ y los dos dataset hechos por numba. Guiandonos por eficienciencia y speedup, todos los resultados estan muy cercanos, estadisticamente probablemente no hay distincion significativa entre los modos guided/dynamic/secuencial/static. Aún con eso dicho, dynamic guided muestra resultados ligeramente que el resto. En base a los resultados de C++.
 
 Ahora, sobre el scaling: usando los resultados de numba se ve como la eficiencia disminuye linealmente a medida que aumenta los threads y el speedup aumenta linealmente tambien, ambos aproximadamente.
