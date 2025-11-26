@@ -1,0 +1,66 @@
+Para la parte C, como hice un slurm con variables, se ejecutaron los siguientes comandos:
+
+##########################################################################################
+
+#### Configuración 0 ####
+
+a) 1 proceso MPI × 1 thread: sbatch --nodes=1 --ntasks=1 --cpus-per-task=1 connect.slurm
+b) 1 proceso MPI × 2 threads: sbatch --nodes=1 --ntasks=1 --cpus-per-task=2 connect.slurm
+c) 1 proceso MPI × 4 threads: sbatch --nodes=1 --ntasks=1 --cpus-per-task=4 connect.slurm
+d) 1 proceso MPI × 8 threads: sbatch --nodes=1 --ntasks=1 --cpus-per-task=8 connect.slurm
+
+jobs correspondientes:
+a) Submitted batch job 3198. Wall time: 3.3786035189999986
+b) Submitted batch job 3199. Wall time: 32.306243203
+c) Submitted batch job 3200. Wall time: 32.357502328
+d) Submitted batch job 3201. Wall time: 35.590244666000004
+
+##########################################################################################
+
+#### Configuración 1 ####
+
+a) 2 MPI × 1 thread = 2 CPUs: sbatch --nodes=1 --ntasks=2 --ntasks-per-node=2 --cpus-per-task=1 connect.slurm
+b) 2 MPI × 2 threads = 4 CPUs: sbatch --nodes=1 --ntasks=2 --ntasks-per-node=2 --cpus-per-task=2 connect.slurm
+c) 2 MPI × 4 threads = 8 CPUs: sbatch --nodes=1 --ntasks=2 --ntasks-per-node=2 --cpus-per-task=4 connect.slurm
+d) 2 MPI × 8 threads = 16 CPUs: sbatch --nodes=2 --ntasks=2 --ntasks-per-node=1 --cpus-per-task=8 connect.slurm
+
+jobs correspondientes:
+a) Submitted batch job 3213. Wall time: 4.816259730000002
+b) Submitted batch job 3203. Wall time: 17.211303045999998 
+c) Submitted batch job 3204. Wall time: 19.483623636
+d) Submitted batch job 3205. Wall time: 19.643538344
+
+##########################################################################################
+
+#### Configuración 2 ####
+
+a) 4 MPI × 1 thread = 4 CPUs: sbatch --nodes=1 --ntasks=4 --ntasks-per-node=4 --cpus-per-task=1 connect.slurm
+b) 4 MPI × 2 threads = 8 CPUs: sbatch --nodes=1 --ntasks=4 --ntasks-per-node=4 --cpus-per-task=2 connect.slurm
+c) 4 MPI × 4 threads = 16 CPUs: sbatch --nodes=2 --ntasks=4 --ntasks-per-node=2 --cpus-per-task=4 connect.slurm
+
+jobs correspondientes:
+a) Submitted batch job 3214. Wall time: 5.053589464000002
+b) Submitted batch job 3207. Wall time: 9.909074129
+c) Submitted batch job 3208. Wall time: 11.995011326999999
+
+##########################################################################################
+
+#### Configuración 3 ####
+
+a) 8 MPI × 1 thread = 8 CPUs (1 nodo): sbatch --nodes=1 --ntasks=8 --ntasks-per-node=8 --cpus-per-task=1 connect.slurm
+b) 8 MPI × 2 threads = 16 CPUs (2 nodos): sbatch --nodes=2 --ntasks=8 --ntasks-per-node=4 --cpus-per-task=2 connect.slurm
+
+jobs correspondientes:
+a) Submitted batch job 3215. Wall time: 864.957791958
+b) Submitted batch job 3210. Wall time: 8.359644056
+
+##########################################################################################
+
+#### Configuración 4 ####
+
+a) 16 MPI × 1 thread = 16 CPUs (2 nodos, 8 tareas por nodo): sbatch --nodes=2 --ntasks=16 --ntasks-per-node=8 --cpus-per-task=1 connect.slurm
+
+jobs correspondientes:
+a) Submitted batch job 3216. Wall time: 710.973355718
+
+cat kmeans_3215.out
