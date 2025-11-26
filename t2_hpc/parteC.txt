@@ -62,5 +62,3 @@ a) 16 MPI × 1 thread = 16 CPUs (2 nodos, 8 tareas por nodo): sbatch --nodes=2 -
 
 jobs correspondientes:
 a) Submitted batch job 3216. Wall time: 710.973355718
-
-cat kmeans_3215.out
