@@ -3,6 +3,7 @@
 #SBATCH --partition=hpc-iic3533
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
+#SBATCH --mem=3900mb
 #SBATCH --cpus-per-task=2
 #SBATCH --time=00:15:00
 #SBATCH --output=kmeans_%j.out
