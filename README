@@ -6,5 +6,5 @@
 4. Preparar el script SLURM para correr el código en el cluster (ver enunciado) ✅
 5. Probar correr el código en el cluster - cuando funcione describir los pasos necesarios de esto ✅
 6. Realizar los experimentos solicitados en el enunciado (variando número de procesos, puntos, dimensiones, clusters, etc) ✅
-7. Recolectar los resultados y presentarlos en tabla (tiempos, speedup)
-8. Identificar y analizar preguntas parte d del enunciado
+7. Recolectar los resultados y presentarlos en tabla (tiempos, speedup) ✅
+8. Identificar y analizar preguntas parte d del enunciado  ✅
